@@ -138,8 +138,11 @@ if st.session_state.turn == "computer" and not is_full(st.session_state.com_b):
 # Check game over
 if is_full(st.session_state.board) or is_full(st.session_state.com_b):
     st.subheader("🏆 Game Over!")
-    st.write(f"Your Final Sum: {sum(st.session_state.board)}")
-    st.write(f"Computer Final Sum: {sum(st.session_state.com_b)}")
+    player_score = col_sum[0] + col_sum[1] + col_sum[2]
+    computer_score = col_sum[3] + col_sum[4] + col_sum[5]
+
+    st.write(f"Your Final Sum: {player_score}")    
+    st.write(f"Computer Final Sum: {computer_score}")
 
     if sum(st.session_state.board) > sum(st.session_state.com_b):
         st.success("🎉 You win!")
