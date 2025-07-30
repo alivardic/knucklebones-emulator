@@ -26,21 +26,25 @@ This code was originally developed to be an IDE console version of Knucklebones 
 The original IDE console version of this app can be run with the `summarize.py` using your IDE terminal. 
 
 ### 🌐 Streamlit Web App
-While this emmulation was originally developed and completed to run as a IDE terminal app, adjusts were made to develop a Streamlit app version that would be easily shared on Github.
+While this emmulation was originally developed and completed to run as a IDE terminal app, adjustments were made to develop a Streamlit app version that would be easily shared on Github.
 
-#### Script Differences
+#### Major Script Differences
 Input/ Output Handling:
 | Original IDE Version                                     | Streamlit Version                                                              |
 | -------------------------------------------------------- | ------------------------------------------------------------------------------ |
 | Used `typingInput()` and `input()` for text-based input. | Uses **Streamlit buttons** (`st.button`) for interaction.                      |
 | Used `print()` to display the board.                     | Uses `st.text()`, `st.write()`, and columns to show the board in the browser.  |
 | Animated typing effect with `typingPrint()`.             | No typing animation—Streamlit UI updates dynamically when buttons are pressed. |
-
 Game State Management
-| Original                                                                                | Streamlit                                                                                                                                  |
+| Original IDE Version                                                                    | Streamlit                                                                                                                                  |
 | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
 | Game state stored in **local variables** (`board`, `com_b`, etc.) inside `play_game()`. | Game state stored in **`st.session_state`**, so it **persists between button clicks** (Streamlit re-runs the script on every interaction). |
 | A `while` loop runs the entire game until it ends.                                      | **No game loop.** The app **re-runs from the top** on every button click, using session state to remember progress.                        |
+Player Interaction
+| Original IDE Version                                                    | Streamlit                                                                                            |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| Dice is rolled inside `get_player_move()` before asking for a position. | Dice is rolled with a **"🎲 Roll Dice" button**. The roll is stored in `st.session_state.last_roll`. |
+| User inputs a position number.                                          | The board is rendered as **grid buttons**, and the player clicks the square they want.               |
 
 
 
