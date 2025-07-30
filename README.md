@@ -51,6 +51,6 @@ Player Interaction
 Other minor changes were made to the original IDE script to fit the needs of the Streamlit app, most of which can be summarized with the fact that the IDE version primarily depends on `for` and `while` loops, while the Streamlit app depends on session states to track computer and player moves.
 
 ## App Link ⌯⌲
-The link to play the Streamlit Version of the emmulation can be found: Here
+The link to play the Streamlit Version of the emmulation can be found: Here [https://knucklebones-emulator.streamlit.app/]
 
 
